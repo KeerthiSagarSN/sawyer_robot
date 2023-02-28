@@ -429,7 +429,7 @@
 </xacro:unless>
   </link>
   <joint name="right_hand" type="fixed">
-    <origin rpy="0 0 1.570796" xyz="0 0 0.0245"/>
+    <origin rpy="0 0 1.570796" xyz="0.001 0.001 0.100"/>
     <axis xyz="0 0 1"/>
     <parent link="right_l6"/>
     <child link="right_hand"/>

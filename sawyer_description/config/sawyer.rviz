@@ -6,8 +6,17 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
+        - /PolygonArray1
+        - /PolygonArray2
+        - /PolygonArray3
+        - /PolygonArray4
+        - /PointStamped1
+        - /PointStamped2
+        - /SegmentArray1
+        - /PointStamped3
+        - /PointStamped4
       Splitter Ratio: 0.5
-    Tree Height: 728
+    Tree Height: 719
   - Class: rviz/Selection
     Name: Selection
   - Class: rviz/Tool Properties
@@ -16,17 +25,20 @@ Panels:
       - /2D Nav Goal1
       - /Publish Point1
     Name: Tool Properties
-    Splitter Ratio: 0.588679016
+    Splitter Ratio: 0.5886790156364441
   - Class: rviz/Views
     Expanded:
       - /Current View1
     Name: Views
     Splitter Ratio: 0.5
   - Class: rviz/Time
-    Experimental: false
     Name: Time
     SyncMode: 0
     SyncSource: ""
+Preferences:
+  PromptSaveOnExit: true
+Toolbars:
+  toolButtonStyle: 2
 Visualization Manager:
   Class: ""
   Displays:
@@ -36,7 +48,7 @@ Visualization Manager:
       Color: 160; 160; 164
       Enabled: true
       Line Style:
-        Line Width: 0.0299999993
+        Line Width: 0.029999999329447746
         Value: Lines
       Name: Grid
       Normal Cell Count: 0
@@ -62,6 +74,11 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+        controller_box:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         head:
           Alpha: 1
           Show Axes: false
@@ -72,6 +89,11 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
         pedestal:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        pedestal_feet:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -104,7 +126,17 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        right_l1_2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         right_l2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_l2_2:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -115,6 +147,11 @@ Visualization Manager:
           Show Trail: false
           Value: true
         right_l4:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_l4_2:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -153,10 +190,137 @@ Visualization Manager:
       Update Interval: 0
       Value: true
       Visual Enabled: true
+    - Class: rviz/TF
+      Enabled: false
+      Frame Timeout: 15
+      Frames:
+        All Enabled: true
+      Marker Alpha: 1
+      Marker Scale: 1
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: true
+      Tree:
+        {}
+      Update Interval: 0
+      Value: false
+    - Alpha: 0.75
+      Class: jsk_rviz_plugin/PolygonArray
+      Color: 46; 52; 54
+      Enabled: false
+      Name: PolygonArray
+      Queue Size: 10
+      Topic: /available_velocity_polytope
+      Unreliable: false
+      Value: false
+      coloring: Flat color
+      enable lighting: true
+      normal length: 0.10000000149011612
+      only border: true
+      show normal: false
+    - Alpha: 0.75
+      Class: jsk_rviz_plugin/PolygonArray
+      Color: 52; 101; 164
+      Enabled: true
+      Name: PolygonArray
+      Queue Size: 10
+      Topic: /available_velocity_polytope_est
+      Unreliable: false
+      Value: true
+      coloring: Flat color
+      enable lighting: true
+      normal length: 0.10000000149011612
+      only border: true
+      show normal: false
+    - Alpha: 0.800000011920929
+      Class: jsk_rviz_plugin/PolygonArray
+      Color: 115; 210; 22
+      Enabled: true
+      Name: PolygonArray
+      Queue Size: 10
+      Topic: /desired_velocity_polytope
+      Unreliable: false
+      Value: true
+      coloring: Flat color
+      enable lighting: true
+      normal length: 0.10000000149011612
+      only border: true
+      show normal: false
+    - Alpha: 0.8500000238418579
+      Class: jsk_rviz_plugin/PolygonArray
+      Color: 204; 0; 0
+      Enabled: true
+      Name: PolygonArray
+      Queue Size: 10
+      Topic: /capacity_margin_polytope_est
+      Unreliable: false
+      Value: true
+      coloring: Flat color
+      enable lighting: true
+      normal length: 0.10000000149011612
+      only border: false
+      show normal: false
+    - Alpha: 1
+      Class: rviz/PointStamped
+      Color: 193; 125; 17
+      Enabled: true
+      History Length: 1
+      Name: PointStamped
+      Queue Size: 10
+      Radius: 0.009999999776482582
+      Topic: /capacity_margin_vertex
+      Unreliable: false
+      Value: true
+    - Alpha: 1
+      Class: rviz/PointStamped
+      Color: 204; 41; 204
+      Enabled: true
+      History Length: 1
+      Name: PointStamped
+      Queue Size: 10
+      Radius: 0.009999999776482582
+      Topic: /capacity_margin_proj_vertex_est
+      Unreliable: false
+      Value: true
+    - Class: jsk_rviz_plugin/SegmentArray
+      Enabled: true
+      Name: SegmentArray
+      Queue Size: 10
+      Topic: /capacity_margin_actual_est
+      Unreliable: false
+      Value: true
+      alpha: 0.800000011920929
+      color: 245; 121; 0
+      coloring: Flat color
+      line width: 0.004999999888241291
+    - Alpha: 1
+      Class: rviz/PointStamped
+      Color: 70; 238; 241
+      Enabled: true
+      History Length: 1
+      Name: PointStamped
+      Queue Size: 10
+      Radius: 0.02500000037252903
+      Topic: /ef_pose_vertex
+      Unreliable: false
+      Value: true
+    - Alpha: 1
+      Class: rviz/PointStamped
+      Color: 158; 189; 112
+      Enabled: true
+      History Length: 1
+      Name: PointStamped
+      Queue Size: 10
+      Radius: 0.02500000037252903
+      Topic: /ef_desired_pose_vertex
+      Unreliable: false
+      Value: true
   Enabled: true
   Global Options:
-    Background Color: 48; 48; 48
-    Fixed Frame: base
+    Background Color: 255; 255; 255
+    Default Light: true
+    Fixed Frame: right_arm_base_link
     Frame Rate: 30
   Name: root
   Tools:
@@ -167,7 +331,10 @@ Visualization Manager:
     - Class: rviz/FocusCamera
     - Class: rviz/Measure
     - Class: rviz/SetInitialPose
+      Theta std deviation: 0.2617993950843811
       Topic: /initialpose
+      X std deviation: 0.5
+      Y std deviation: 0.5
     - Class: rviz/SetGoal
       Topic: /move_base_simple/goal
     - Class: rviz/PublishPoint
@@ -177,32 +344,33 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 2.27867007
+      Distance: 3.1138899326324463
       Enable Stereo Rendering:
-        Stereo Eye Separation: 0.0599999987
+        Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
+      Field of View: 0.7853981852531433
       Focal Point:
-        X: 0
-        Y: 0
-        Z: 0
+        X: 0.06266195327043533
+        Y: 0.09632927179336548
+        Z: -0.08029026538133621
       Focal Shape Fixed Size: true
-      Focal Shape Size: 0.0500000007
+      Focal Shape Size: 0.05000000074505806
+      Invert Z Axis: false
       Name: Current View
-      Near Clip Distance: 0.00999999978
-      Pitch: 0.240398526
+      Near Clip Distance: 0.009999999776482582
+      Pitch: 0.39539822936058044
       Target Frame: <Fixed Frame>
-      Value: Orbit (rviz)
-      Yaw: 5.87858343
+      Yaw: 2.520390272140503
     Saved: ~
 Window Geometry:
   Displays:
-    collapsed: false
-  Height: 1016
-  Hide Left Dock: false
+    collapsed: true
+  Height: 752
+  Hide Left Dock: true
   Hide Right Dock: false
-  QMainWindow State: 000000ff00000000fd00000004000000000000015600000360fc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003a00000360000000c600fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000010f00000360fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000003a000003600000009e00fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000006b50000003efc0100000002fb0000000800540069006d00650100000000000006b50000024400fffffffb0000000800540069006d00650100000000000004500000000000000000000005590000036000000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd0000000400000000000002010000035afc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073000000003d0000035a000000c900fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000010f00000360fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000003a00000360000000a400fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e100000197000000030000056a0000003efc0100000002fb0000000800540069006d006501000000000000056a000003bc00fffffffb0000000800540069006d006501000000000000045000000000000000000000056a0000025200000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Selection:
     collapsed: false
   Time:
@@ -211,6 +379,6 @@ Window Geometry:
     collapsed: false
   Views:
     collapsed: false
-  Width: 1717
-  X: 203
-  Y: 35
+  Width: 1386
+  X: 405
+  Y: 281
